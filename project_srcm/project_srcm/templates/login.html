@@ -1,0 +1,84 @@
+<html>
+<head>
+<style>
+.table-top{
+	border-top:2px solid #00a;
+	border-bottom:2px solid #00a;
+
+
+}
+.person_details{
+	border:2px solid #123;
+	margin-top:10px;
+	margin:bottom:10px;
+	width:300px;
+	min-height:250px;
+}
+
+#left-items{
+	margin-left:100px;
+    position: absolute;
+}
+#right-items{
+	margin-left:650px;
+	position: absolute;
+}
+td{
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:18px;
+}
+#head{
+	font-size:30px;
+	color:#00a;
+}
+
+</style>
+
+<title>SRCM
+</title>
+<body>
+<div id = "top">
+<form>
+<input type="hidden" value="prev" id="prev" name="prev">
+</form>
+	<div id = "head" align="center">
+	<b><u>List of Abhyasis By Center & Introducing Prefect</b></u>
+	</div><br><br>
+	<div id = "prefect_details" style="padding-left:10%;padding-right:10%;">
+		<table width=100% class="table-top">
+			<tr>
+				<td><font color=#00a><b>Centre:</b></font> {centre_name}</td>
+				<td><font color=#00a><b>Zone:</b></font> {zone_name}</td>
+			</tr>
+			<tr>
+				<td><font color=#00a><b>Introducing Prefect:</b></font> {prefect}</td>
+			</tr>
+		</table>
+	</div>
+<br><br><br>
+<div id ="left-items">
+{%for i in left%}
+<table class = "person_details">
+<tr><td><font color="#048">FirstName </font></td><td>:</td><td> {{i.first_name}}</td></tr>
+<tr><td><font color="#048">LastName </font></td><td>:</td><td> {{i.last_name}}</td></tr>
+<tr><td><font color="#048">Ref </font></td><td>:</td><td> {{i.ref}}</td></tr>
+<tr><td><font color="#048">ID </font></td><td>:</td><td> {{i.id}}</td></tr>
+<tr><td><font color="#048">Name </font></td><td>:</td><td> {{i.name}}</td></tr>
+</table>
+{%endfor%}
+</div>
+<div id ="right-items">
+{%for i in right%}
+<table class = "person_details">
+<tr><td><font color="#048">FirstName </font></td><td>:</td><td> {{i.first_name}}</td></tr>
+<tr><td><font color="#048">LastName </font></td><td>:</td><td> {{i.last_name}}</td></tr>
+<tr><td><font color="#048">Ref </font></td><td>:</td><td> {{i.ref}}</td></tr>
+<tr><td><font color="#048">ID </font></td><td>:</td><td> {{i.id}}</td></tr>
+<tr><td><font color="#048">Name </font></td><td>:</td><td> {{i.name}}</td></tr>
+</table>
+{%endfor%}
+</div>
+</form>
+</body>
+</html>
